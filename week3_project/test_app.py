@@ -1,8 +1,10 @@
 import os
+
 from fastapi.testclient import TestClient
+
 from .app.server import app
 
-os.chdir('app')
+os.chdir("app")
 client = TestClient(app)
 
 """ 
@@ -19,6 +21,7 @@ It would be nice to write some tests to ensure we don't regress!
     (ii) Testing FastAPI with startup and shutdown events: https://fastapi.tiangolo.com/advanced/testing-events/
 
 """
+
 
 def test_root():
     """
@@ -47,7 +50,7 @@ def test_predict_en_lang():
 def test_predict_es_lang():
     """
     [TO BE IMPLEMENTED]
-    Test the "/predict" endpoint, with an input text in Spanish. 
+    Test the "/predict" endpoint, with an input text in Spanish.
     Does the tokenizer and classifier handle this case correctly? Does it return an error?
     """
     pass
@@ -56,7 +59,7 @@ def test_predict_es_lang():
 def test_predict_non_ascii():
     """
     [TO BE IMPLEMENTED]
-    Test the "/predict" endpoint, with an input text that has non-ASCII characters. 
+    Test the "/predict" endpoint, with an input text that has non-ASCII characters.
     Does the tokenizer and classifier handle this case correctly? Does it return an error?
     """
     pass
